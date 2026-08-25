@@ -1,0 +1,821 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Noto Sans JP",
+    "Yu Gothic",
+    "Hiragino Kaku Gothic ProN",
+    Arial,
+    sans-serif;
+
+  background: #0d0d0d;
+  color: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(120, 90, 50, 0.18),
+      transparent 35%
+    ),
+    #0d0d0d;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 30px;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  letter-spacing: 4px;
+  line-height: 1;
+}
+
+.logo span {
+  display: block;
+
+  margin-top: 6px;
+
+  font-size: 9px;
+  letter-spacing: 5px;
+
+  opacity: 0.65;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.nav a {
+  opacity: 0.75;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.reserve-button {
+  padding: 12px 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  font-size: 11px;
+  letter-spacing: 2px;
+
+  transition: 0.3s;
+}
+
+.reserve-button:hover {
+  background: #ffffff;
+  color: #111111;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 120px 8% 80px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.75)
+    ),
+    url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=85")
+    center / cover no-repeat;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero-subtitle {
+  margin-bottom: 25px;
+
+  font-size: 13px;
+  letter-spacing: 6px;
+
+  opacity: 0.7;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(42px, 6vw, 80px);
+
+  line-height: 1.2;
+
+  font-weight: 400;
+}
+
+.hero p {
+  line-height: 2;
+  opacity: 0.75;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+
+  margin-top: 35px;
+}
+
+.button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 190px;
+
+  padding: 16px 24px;
+
+  font-size: 12px;
+  letter-spacing: 2px;
+
+  transition: 0.3s;
+}
+
+.button.primary {
+  background: #ffffff;
+  color: #111111;
+}
+
+.button.primary:hover {
+  opacity: 0.8;
+}
+
+.button.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.button.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+  min-height: 80vh;
+
+  padding:
+    150px
+    8%
+    100px;
+}
+
+.page h1 {
+  font-family: Georgia, serif;
+
+  font-size: 55px;
+  font-weight: 400;
+
+  letter-spacing: 4px;
+}
+
+.page p {
+  opacity: 0.7;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  padding: 60px 8% 25px;
+
+  background: #090909;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  font-family: Georgia, serif;
+
+  letter-spacing: 4px;
+}
+
+.footer p {
+  opacity: 0.6;
+
+  font-size: 13px;
+}
+
+.footer-contact {
+  text-align: right;
+}
+
+.copyright {
+  margin-top: 60px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  text-align: center;
+
+  font-size: 10px;
+
+  opacity: 0.5;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+  .header-inner {
+    height: 70px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .reserve-button {
+    padding: 10px 14px;
+  }
+
+  .hero {
+    padding: 120px 25px 60px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .page {
+    padding:
+      120px
+      25px
+      80px;
+  }
+
+  .page h1 {
+    font-size: 40px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-contact {
+    text-align: left;
+  }
+}
+/* ========================================
+   THERAPIST SECTION
+======================================== */
+
+.section-heading {
+  margin-bottom: 60px;
+}
+
+.section-heading h1 {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.loading,
+.error,
+.empty {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.error {
+  color: #ff9999;
+}
+
+
+/* GRID */
+
+.therapist-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 30px;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+}
+
+
+/* CARD */
+
+.therapist-card {
+
+  background: #151515;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s,
+    border-color 0.3s;
+
+}
+
+.therapist-card:hover {
+
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(255, 255, 255, 0.25);
+
+}
+
+
+/* IMAGE */
+
+.therapist-image {
+
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 3 / 4;
+
+  overflow: hidden;
+
+  background: #222;
+
+}
+
+.therapist-image img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform 0.5s;
+
+}
+
+.therapist-card:hover
+.therapist-image img {
+
+  transform:
+    scale(1.04);
+
+}
+
+
+.image-placeholder {
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(255,255,255,0.35);
+
+  font-size: 12px;
+
+  letter-spacing: 3px;
+
+}
+
+
+/* BADGES */
+
+.badges {
+
+  position: absolute;
+
+  top: 15px;
+  left: 15px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+}
+
+.badges span {
+
+  padding:
+    6px 9px;
+
+  background:
+    rgba(0,0,0,0.75);
+
+  border:
+    1px solid
+    rgba(255,255,255,0.25);
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+
+}
+
+
+/* INFO */
+
+.therapist-info {
+
+  padding: 25px;
+
+}
+
+.therapist-info h2 {
+
+  margin:
+    0 0 10px;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 25px;
+
+  font-weight: 400;
+
+}
+
+.profile {
+
+  margin:
+    0 0 15px;
+
+  font-size: 12px;
+
+  opacity: 0.65;
+
+}
+
+.description {
+
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1.9;
+
+  opacity: 0.65;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  .therapist-grid {
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+
+  }
+
+  .therapist-info {
+
+    padding: 18px;
+
+  }
+
+  .therapist-info h2 {
+
+    font-size: 20px;
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .therapist-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+}
+/* ========================================
+   ADMIN
+======================================== */
+
+.admin-page {
+  min-height: 100vh;
+  padding: 100px 20px;
+  background: #0b0b0b;
+}
+
+.admin-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.admin-header h1 {
+  margin: 5px 0 0;
+  font-size: 36px;
+}
+
+.admin-label {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 3px;
+  opacity: 0.5;
+}
+
+.admin-site-link {
+  padding: 12px 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  text-decoration: none;
+}
+
+.admin-message {
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  background: #1c1c1c;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.admin-card {
+  margin-bottom: 30px;
+  padding: 30px;
+  background: #151515;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.admin-card h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.admin-form input,
+.admin-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: #0d0d0d;
+  color: white;
+  font-size: 14px;
+}
+
+.admin-form textarea {
+  resize: vertical;
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.admin-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.admin-checkboxes label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.admin-actions button,
+.admin-item-actions button {
+  padding: 12px 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+
+.admin-actions .cancel-button {
+  background: transparent;
+  color: white;
+}
+
+.admin-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-list-header span {
+  opacity: 0.5;
+}
+
+.admin-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-therapist {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.admin-therapist-image {
+  width: 80px;
+  height: 100px;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  opacity: 0.6;
+}
+
+.admin-therapist-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-therapist-info h3 {
+  margin: 0 0 5px;
+}
+
+.admin-therapist-info p {
+  margin: 0 0 10px;
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+.admin-status {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.admin-status span {
+  padding: 4px 7px;
+  border: 1px solid rgba(255,255,255,0.15);
+  font-size: 9px;
+}
+
+.admin-item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-item-actions .delete-button {
+  background: transparent;
+  color: white;
+}
+
+@media (max-width: 700px) {
+
+  .admin-header {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .admin-header h1 {
+    font-size: 28px;
+  }
+
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-therapist {
+    grid-template-columns: 60px 1fr;
+  }
+
+  .admin-therapist-image {
+    width: 60px;
+    height: 80px;
+  }
+
+  .admin-item-actions {
+    grid-column: 1 / -1;
+  }
+
+}
